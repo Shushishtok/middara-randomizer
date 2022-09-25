@@ -1,0 +1,22 @@
+{
+    "name": "middara-randomizer",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "scripts": {
+        "dev": "tsc --watch",
+        "init": "node dist/initAdventurers.js",
+        "unlock": "node dist/unlockAdventurer.js",
+        "set-selectable": "node dist/setAdventurerSelectable.js",
+        "shop-and-train": "node dist/shopAndTrain.js",
+		"add-xp": "node dist/addExperience.js",
+		"respec": "node dist/respec.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "module",
+    "dependencies": {
+        "typescript": "^4.8.3"
+    }
+}

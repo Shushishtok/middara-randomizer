@@ -1,0 +1,187 @@
+{
+    "Zeke": {
+        "chosenDisciplineTrees": [
+            "Martial",
+            "Subterfuge"
+        ],
+        "selectable": true,
+        "unlocked": true,
+        "disciplines": {
+            "Follow Through": {
+                "level": 1,
+                "tree": "Subterfuge"
+            },
+            "Chains Of Command": {
+                "level": 1,
+                "tree": "Martial"
+            },
+            "Physically Perfected": {
+                "level": 2,
+                "tree": "Martial"
+            },
+            "Nemesis Enforcement": {
+                "level": 3,
+                "tree": "Martial"
+            },
+            "Will To Live": {
+                "level": 4,
+                "tree": "Martial"
+            }
+        },
+        "xp": 1
+    },
+    "Rook": {
+        "chosenDisciplineTrees": [
+            "Assemblage",
+            "Martial"
+        ],
+        "selectable": true,
+        "unlocked": true,
+        "disciplines": {
+            "Sanctuary": {
+                "level": 1,
+                "tree": "Assemblage"
+            },
+            "Possession": {
+                "level": 2,
+                "tree": "Assemblage"
+            },
+            "Blade Works": {
+                "level": 1,
+                "tree": "Martial"
+            },
+            "Mage Breaker": {
+                "level": 2,
+                "tree": "Martial"
+            },
+            "The Pessimist": {
+                "level": 3,
+                "tree": "Assemblage"
+            }
+        },
+        "xp": 5
+    },
+    "Nightingale": {
+        "chosenDisciplineTrees": [
+            "Subterfuge",
+            "Assemblage"
+        ],
+        "selectable": true,
+        "unlocked": true,
+        "disciplines": {
+            "Forbode": {
+                "level": 1,
+                "tree": "Assemblage"
+            },
+            "Murder Circus": {
+                "level": 1,
+                "tree": "Subterfuge"
+            },
+            "Friend Over Foe": {
+                "level": 2,
+                "tree": "Subterfuge"
+            },
+            "Rapid Reload": {
+                "level": 3,
+                "tree": "Subterfuge"
+            },
+            "Brutal Slaughter": {
+                "level": 4,
+                "tree": "Subterfuge"
+            },
+            "Overwatch": {
+                "level": 2,
+                "tree": "Subterfuge"
+            }
+        },
+        "xp": 1
+    },
+    "Remi": {
+        "chosenDisciplineTrees": [
+            "Subterfuge",
+            "Martial"
+        ],
+        "selectable": true,
+        "unlocked": true,
+        "disciplines": {
+            "Trick Shot": {
+                "level": 1,
+                "tree": "Subterfuge"
+            },
+            "Anticipated Attack": {
+                "level": 1,
+                "tree": "Martial"
+            },
+            "Shame Of The Otaku": {
+                "level": 2,
+                "tree": "Subterfuge"
+            },
+            "Precise Strike": {
+                "level": 3,
+                "tree": "Subterfuge"
+            },
+            "Fist Of Polaris": {
+                "level": 4,
+                "tree": "Subterfuge"
+            },
+            "Promise": {
+                "level": 2,
+                "tree": "Martial"
+            }
+        },
+        "xp": 1
+    },
+    "Padraic": {
+        "selectable": true,
+        "unlocked": true,
+        "disciplines": {
+            "Perfect Love": {
+                "level": 1,
+                "tree": "Assemblage"
+            },
+            "Quick Blow": {
+                "level": 1,
+                "tree": "Subterfuge"
+            },
+            "Possession": {
+                "level": 2,
+                "tree": "Assemblage"
+            },
+            "C.Q.C": {
+                "level": 2,
+                "tree": "Subterfuge"
+            },
+            "Ninjutsu": {
+                "level": 3,
+                "tree": "Subterfuge"
+            },
+            "Friends With Benefits": {
+                "level": 3,
+                "tree": "Assemblage"
+            }
+        },
+        "xp": 2,
+        "chosenDisciplineTrees": [
+            "Subterfuge",
+            "Assemblage"
+        ]
+    },
+    "Shayliss": {
+        "selectable": true,
+        "unlocked": false,
+        "disciplines": {},
+        "xp": 35
+    },
+    "Damocles": {
+        "selectable": true,
+        "unlocked": false,
+        "disciplines": {},
+        "xp": 35
+    },
+    "Zafir": {
+        "selectable": true,
+        "unlocked": false,
+        "disciplines": {},
+        "xp": 35
+    }
+}
