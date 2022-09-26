@@ -6,12 +6,13 @@
     "scripts": {
         "build": "tsc --project .",
         "dev": "tsc --watch",
-        "init": "node dist/initAdventurers.js",
+        "init": "node dist/init.js",
         "unlock": "node dist/unlockAdventurer.js",
         "set-selectable": "node dist/setAdventurerSelectable.js",
         "shop-and-train": "node dist/shopAndTrain.js",
         "add-xp": "node dist/addExperience.js",
-        "respec": "node dist/respec.js"
+        "respec": "node dist/respec.js",
+        "new-story-round": "node dist/newStoryRound.js"
     },
     "keywords": [],
     "author": "",

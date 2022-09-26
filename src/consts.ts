@@ -1,4 +1,6 @@
 export const ADVENTURERS_DATA_FILE_PATH = "json/adventurersData.json";
+export const PARTY_DATA_FILE_PATH = "json/partyData.json";
+
 export const DISCIPLINE_TREES_PER_ADVENTUERER = 2;
 export const MAX_DISCIPLINE_LEVEL = 4;
 export const DISCIPLINE_STOCKS = {

@@ -49,3 +49,12 @@ Run the script by typing `npm run shop-and-train`.
 # Respec
 
 Use the `npm run respec <adventurerName>` script to respec an adventurer. This will completely reinitialize it, removing its chosen disciplines and disicpline trees, and choosing new disciplines trees and disciplines from those new trees. Note that respeccing costs 1 XP, which is forever lost.
+
+# New Story Round
+
+Whenever adventurers reach a new Story Round, a random Unique item from the current loot level is placed on the shop for sale. Run the `npm run new-story-round` script in order to randomize which Unique item will be added to the shop, if any are available to buy.
+
+Unique items in the shop are also considererd when buying items via the Shop and Train script.
+
+SELF:
+TODO: add script for adding items found during encounters to the items list in order to correctly remove them from the shop.

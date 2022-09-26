@@ -8,9 +8,15 @@ import {
     DISCIPLINE_STOCKS,
     DISCIPLINE_TREES_PER_ADVENTUERER,
     MAX_DISCIPLINE_LEVEL,
+    PARTY_DATA_FILE_PATH,
 } from "./consts.js";
 import { disciplines } from "./data/disciplines.js";
 import { getCountInArr, pickAndRemoveFromArray, pickOneFromArray } from "./generalUtils.js";
+import { AdventuringParty } from "./interfaces/party.js";
+import { initialAdventurersData } from "./data/initialAdventurersData.js";
+import { initialPartyData } from "./data/initialPartyData.js";
+import { items } from "./data/items.js";
+import { Item, ItemName } from "./interfaces/item.js";
 
 export function getAmountOfDisciplinesInStock(discipline: Discipline) {
     return DISCIPLINE_STOCKS[discipline.level];
@@ -40,20 +46,29 @@ export function verifyAdventurerName(adventurerName: AdventurerName, scriptName:
 }
 
 export function getAdventurersData() {
-    // If adventurers file doesn't exist, exit with an error message
-    if (!fs.existsSync(ADVENTURERS_DATA_FILE_PATH)) {
-        console.log("Adventurers file could not be found. If you haven't initialized yet, run npm run init to create the file.");
-        return null;
-    }
+    const adventurersData = fs.existsSync(ADVENTURERS_DATA_FILE_PATH)
+        ? (JSON.parse(fs.readFileSync(ADVENTURERS_DATA_FILE_PATH, "utf-8")) as AdventurersData)
+        : initialAdventurersData;
 
-    // Parse file
-    const adventurersData = JSON.parse(fs.readFileSync(ADVENTURERS_DATA_FILE_PATH, "utf-8")) as AdventurersData;
     return adventurersData;
 }
 
 export function writeAdventurerDataToFile(adventurersData: AdventurersData) {
     const result = JSON.stringify(adventurersData, undefined, 4);
     fs.writeFileSync(ADVENTURERS_DATA_FILE_PATH, result);
+}
+
+export function getAdventuringPartyData() {
+    const adventuringPartyData = fs.existsSync(PARTY_DATA_FILE_PATH)
+        ? (JSON.parse(fs.readFileSync(PARTY_DATA_FILE_PATH, "utf-8")) as AdventuringParty)
+        : initialPartyData;
+
+    return adventuringPartyData;
+}
+
+export function writeAdventuringPartyDataToFile(partyData: AdventuringParty) {
+    const result = JSON.stringify(partyData, undefined, 4);
+    fs.writeFileSync(PARTY_DATA_FILE_PATH, result);
 }
 
 export function getUsedDisciplines(adventurersData: AdventurersData): Discipline[] {
@@ -236,4 +251,24 @@ export function calculateDisciplinesXpWorthForAdventurer(adventurerData: Adventu
     }
 
     return totalDisciplinesWorth;
+}
+
+export function drawNewUniqueItem(adventuringPartyData: AdventuringParty) {
+    const { lootLevel } = adventuringPartyData;
+    const uniqueItems = Object.entries(items).filter(([itemName, item]) => {
+        const isUnique = item.isUnique;
+        const matchingLootLevel = item.rarity === lootLevel;
+        const unlocked = item.unlocked;
+        const notCurrentlyInUniquItemShop = itemName !== adventuringPartyData.uniqueItemInShop;
+        const notUsedByParty = !(itemName in adventuringPartyData.items);
+        return isUnique && matchingLootLevel && unlocked && notCurrentlyInUniquItemShop && notUsedByParty;
+    });
+
+    if (uniqueItems.length === 0) {
+        console.log("Could not find a unique item for this Story Round");
+        return undefined;
+    }
+
+    const chosenUniqueItem = pickOneFromArray(uniqueItems) as [ItemName, Item];
+    return chosenUniqueItem;
 }
